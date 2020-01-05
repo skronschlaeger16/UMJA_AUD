@@ -40,6 +40,38 @@ namespace UMJA {
     /// </summary>
     public partial class MainWindow : System.Windows.Window, System.Windows.Markup.IComponentConnector {
         
+        
+        #line 40 "..\..\MainWindow.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.TextBox tb_pfolder;
+        
+        #line default
+        #line hidden
+        
+        
+        #line 43 "..\..\MainWindow.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.TextBox tb_file_Copy3;
+        
+        #line default
+        #line hidden
+        
+        
+        #line 44 "..\..\MainWindow.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.Button upload;
+        
+        #line default
+        #line hidden
+        
+        
+        #line 50 "..\..\MainWindow.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.Button bt_convert;
+        
+        #line default
+        #line hidden
+        
         private bool _contentLoaded;
         
         /// <summary>
@@ -68,6 +100,101 @@ namespace UMJA {
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity")]
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1800:DoNotCastUnnecessarily")]
         void System.Windows.Markup.IComponentConnector.Connect(int connectionId, object target) {
+            switch (connectionId)
+            {
+            case 1:
+            
+            #line 9 "..\..\MainWindow.xaml"
+            ((System.Windows.Controls.Grid)(target)).DragOver += new System.Windows.DragEventHandler(this.File_DragOver);
+            
+            #line default
+            #line hidden
+            
+            #line 9 "..\..\MainWindow.xaml"
+            ((System.Windows.Controls.Grid)(target)).Drop += new System.Windows.DragEventHandler(this.File_Drop);
+            
+            #line default
+            #line hidden
+            return;
+            case 2:
+            
+            #line 34 "..\..\MainWindow.xaml"
+            ((System.Windows.Controls.MenuItem)(target)).Click += new System.Windows.RoutedEventHandler(this.Exit);
+            
+            #line default
+            #line hidden
+            return;
+            case 3:
+            this.tb_pfolder = ((System.Windows.Controls.TextBox)(target));
+            
+            #line 40 "..\..\MainWindow.xaml"
+            this.tb_pfolder.TextChanged += new System.Windows.Controls.TextChangedEventHandler(this.Tb_pfolder_TextChanged);
+            
+            #line default
+            #line hidden
+            return;
+            case 4:
+            
+            #line 42 "..\..\MainWindow.xaml"
+            ((System.Windows.Controls.StackPanel)(target)).Drop += new System.Windows.DragEventHandler(this.File_Drop);
+            
+            #line default
+            #line hidden
+            
+            #line 42 "..\..\MainWindow.xaml"
+            ((System.Windows.Controls.StackPanel)(target)).DragOver += new System.Windows.DragEventHandler(this.File_DragOver);
+            
+            #line default
+            #line hidden
+            return;
+            case 5:
+            this.tb_file_Copy3 = ((System.Windows.Controls.TextBox)(target));
+            
+            #line 43 "..\..\MainWindow.xaml"
+            this.tb_file_Copy3.Drop += new System.Windows.DragEventHandler(this.File_Drop);
+            
+            #line default
+            #line hidden
+            
+            #line 43 "..\..\MainWindow.xaml"
+            this.tb_file_Copy3.DragOver += new System.Windows.DragEventHandler(this.File_DragOver);
+            
+            #line default
+            #line hidden
+            
+            #line 43 "..\..\MainWindow.xaml"
+            this.tb_file_Copy3.TextChanged += new System.Windows.Controls.TextChangedEventHandler(this.Tb_file_TextChanged);
+            
+            #line default
+            #line hidden
+            return;
+            case 6:
+            this.upload = ((System.Windows.Controls.Button)(target));
+            
+            #line 44 "..\..\MainWindow.xaml"
+            this.upload.Click += new System.Windows.RoutedEventHandler(this.Button_Click_1);
+            
+            #line default
+            #line hidden
+            return;
+            case 7:
+            this.bt_convert = ((System.Windows.Controls.Button)(target));
+            
+            #line 50 "..\..\MainWindow.xaml"
+            this.bt_convert.Click += new System.Windows.RoutedEventHandler(this.Button_Click);
+            
+            #line default
+            #line hidden
+            return;
+            case 8:
+            
+            #line 51 "..\..\MainWindow.xaml"
+            ((System.Windows.Controls.Button)(target)).Click += new System.Windows.RoutedEventHandler(this.Button_Click_2);
+            
+            #line default
+            #line hidden
+            return;
+            }
             this._contentLoaded = true;
         }
     }
