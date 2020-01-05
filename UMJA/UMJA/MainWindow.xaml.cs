@@ -27,8 +27,8 @@ namespace UMJA
         {
             InitializeComponent();
 
-            var parser = new Parser();
-            parser.Parse("C:\\Users\\forol\\OneDrive\\Desktop\\UmjaHoffentlichFunktioniertsJetzt\\UMJA\\UMJA");
+            //var parser = new Parser();
+            //parser.Parse("C:\\Users\\forol\\OneDrive\\Desktop\\UmjaHoffentlichFunktioniertsJetzt\\UMJA\\UMJA");
             tb_pfolder.Text = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
 
         }
@@ -36,11 +36,19 @@ namespace UMJA
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             //  tb_file_Copy.Text = Path.GetFileName(tb_file_Copy3.Text);
-            string filename = Path.GetFileName(tb_file_Copy3.Text);
+            string filename = tb_file_Copy3.Text;
             string folder = tb_pfolder.Text;
             if (tb_file_Copy3.Text == "" || tb_file_Copy3.Text == null)
             {
                 MessageBox.Show("Filename field is empty", "Warning", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+
+            else
+            {
+                var parser = new Parser();
+                parser.Parse(filename, folder);
+                var compiler = new Compiler();
+                compiler.ReadCsv(folder);
             }
 
         }

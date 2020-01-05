@@ -11,13 +11,11 @@ namespace Umja
 {
     public class Parser
     {
-
-
         Collection<string> built_Line = new Collection<string>();
         #region Parse ---> Reads the File and looks which Method should be called for the individual line.
-        public void Parse(string file)
+        public void Parse(string graphml, string csvPath)
         {
-            using (StreamReader reader = new StreamReader(file))
+            using (StreamReader reader = new StreamReader(graphml))
             {
                 var line = reader.ReadLine();
 
@@ -49,17 +47,16 @@ namespace Umja
                     line = reader.ReadLine();
                 }
             }
-            Write_To_CSV();
-
+            Write_To_CSV(csvPath);
         }
 
         #endregion
 
         #region Write_To_CSV ----> Writes all Data of the .graphml into an CSV Data
 
-        private void Write_To_CSV()
+        private void Write_To_CSV(string csvPath)
         {
-            var path = "C:\\Users\\forol\\OneDrive\\Desktop\\UmjaHoffentlichFunktioniertsJetzt\\UMJA\\UMJA\\";
+            var path = $"{csvPath}\\filteredData.csv";
             var package = "";
             var csv_Line = "";
             var class_Type = "";

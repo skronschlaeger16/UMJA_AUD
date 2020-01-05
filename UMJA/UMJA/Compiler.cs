@@ -9,9 +9,9 @@ namespace UMJA
 {
     public class Compiler
     {
-        private void ReadCsv()
+        public void ReadCsv(string path)
         {
-            var filename = "Filtered_Data.csv";
+            var filename = $"{path}\\filteredData.csv";
 
             using (var reader = new StreamReader(filename))
             {
@@ -31,9 +31,9 @@ namespace UMJA
                     List<string> getterNames = new List<string>();
                     List<string> setterNames = new List<string>();
 
-                    Directory.CreateDirectory($"C:\\Users\\forol\\OneDrive\\Desktop\\{folder}");
+                    Directory.CreateDirectory($"{path}\\{folder}");
 
-                    using (var writer = new StreamWriter($"C:\\Users\\forol\\OneDrive\\Desktop\\{folder}\\{className}.java"))
+                    using (var writer = new StreamWriter($"{path}\\{folder}\\{className}.java"))
                     {
                         #region ClassEnumsInterfaces
                         if (classType.Equals("Class"))
@@ -143,6 +143,7 @@ namespace UMJA
 
                             foreach (var item in splitMethods)
                             {
+                                string methodLine = item;
                                 string publicPrivate = "";
                                 string zustand = "";
                                 string methodType = "";
@@ -151,36 +152,36 @@ namespace UMJA
                                 string parameters = "";
                                 List<string> parameterList = new List<string>();
 
-                                if (item.Contains("-"))
+                                if (methodLine.Contains("-"))
                                 {
                                     publicPrivate = "private";
-                                    item.Remove(0, 1);
+                                    methodLine = methodLine.Remove(0, 2);
                                 }
 
                                 else
                                 {
                                     publicPrivate = "public";
-                                    item.Remove(0, 1);
+                                    methodLine = methodLine.Remove(0, 2);
                                 }
 
-                                if (item.Contains("static"))
+                                if (methodLine.Contains("static"))
                                 {
                                     zustand = "static";
-                                    item.Remove(0, 6);
+                                    methodLine = methodLine.Remove(0, 7);
                                 }
 
-                                if (!item.EndsWith(")"))
+                                if (!methodLine.EndsWith(")"))
                                 {
-                                    int idx = item.LastIndexOf(':');
+                                    int idx = methodLine.LastIndexOf(':');
 
                                     if(idx != -1)
                                     {
-                                        methodnameAndParameters = item.Substring(0, idx).Trim();
-                                        methodType = item.Substring(idx + 1).Trim();
+                                        methodnameAndParameters = methodLine.Substring(0, idx).Trim();
+                                        methodType = methodLine.Substring(idx + 1).Trim();
                                     }
 
-                                    methodnameAndParameters.Replace('(', ' ');
-                                    methodnameAndParameters.Remove(methodnameAndParameters.Length - 1);
+                                    methodnameAndParameters = methodnameAndParameters.Replace('(', ' ');
+                                    methodnameAndParameters = methodnameAndParameters.Remove(methodnameAndParameters.Length - 1);
 
                                     var splitMethodFromParameters = methodnameAndParameters.Split(' ');
                                     methodName = splitMethodFromParameters[0];
