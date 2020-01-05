@@ -1,0 +1,8 @@
+Package;Class;Global_Variables(splitted by ,);Methods(Parameters)(splitted by , );Getter/Setter(true or false);Class Type
+net.htlgrieskirchen.pos2.plf.retrosteam.main;Main; - static SCANNER : Scanner, - static STORE : Store, - static user : User;+ static main(args : String[]) : void;False;Class
+net.htlgrieskirchen.pos2.plf.retrosteam.store;GameType;ACTION, ROLEPLAY, STRATEGY, SPORT;False;Enumeration
+net.htlgrieskirchen.pos2.plf.retrosteam.store;Game; - name : String, - price : String, - published : String, - type : GameType;+ toString() : String;True;Class
+net.htlgrieskirchen.pos2.plf.retrosteam.store;Store; - games : Game[];+ Store(),+ getGames() : Game[],+ addGameToUserWishlist(user : User, gameName : String) : void,+ addGameToUserLibrary(user : User, gameName : String) : void;False;Class
+net.htlgrieskirchen.pos2.plf.retrosteam.user;Customer; - name : String, - library : Game[], - wishlist : Game[];+ Customer(name : String),+ getLibrary() : Game[],+ addToLibrary(game : Game) : void,+ toString() : String;False;Class
+net.htlgrieskirchen.pos2.plf.retrosteam.user;User; + static CAPACITY = 2 : intt;+ getWishlist() : Game[],+ addToWishlist(game : Game) : void;False;Interface
+net.htlgrieskirchen.pos2.plf.retrosteam.user;Visitor; - wishlist : Game[];+ Visitor(),+ toString() : String;False;Class
