@@ -27,6 +27,10 @@ namespace UMJA
 
             var parser = new Parser();
             parser.Parse("C:\\Users\\forol\\OneDrive\\Desktop\\UmjaHoffentlichFunktioniertsJetzt\\UMJA\\UMJA");
+            tb_pfolder.Text = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+
         }
+
+
     }
 }
