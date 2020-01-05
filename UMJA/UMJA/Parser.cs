@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Umja
 {
-    class Parser
+    public class Parser
     {
 
 
