@@ -11,8 +11,6 @@ namespace Umja
 {
     public class Parser
     {
-
-
         Collection<string> built_Line = new Collection<string>();
         #region Parse ---> Reads the File and looks which Method should be called for the individual line.
         public void Parse(string file)
@@ -57,9 +55,11 @@ namespace Umja
 
         #region Write_To_CSV ----> Writes all Data of the .graphml into an CSV Data
 
-        private void Write_To_CSV()
+        private void Write_To_CSV(string LukesParth)
         {
-            var path = "C:\\Users\\forol\\OneDrive\\Desktop\\UmjaHoffentlichFunktioniertsJetzt\\UMJA\\UMJA\\";
+            
+            var path = "UmjaHoffentlichFunktioniertsJetzt\\UMJA\\UMJA\\";
+            if (LukesParth!=null) path = LukesParth;
             var package = "";
             var csv_Line = "";
             var class_Type = "";
