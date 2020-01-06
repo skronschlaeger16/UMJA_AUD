@@ -23,6 +23,7 @@ namespace UMJA
     /// </summary>
     public partial class MainWindow : Window
     {
+        
         public MainWindow()
         {
             InitializeComponent();
@@ -33,11 +34,13 @@ namespace UMJA
 
         }
 
+        public string CsvPathLuke { get; set; }
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             //  tb_file_Copy.Text = Path.GetFileName(tb_file_Copy3.Text);
             string filename = tb_file_Copy3.Text;
-            string folder = tb_pfolder.Text;
+            string folder = tb_pfolder.Text;     //CSV
             if (tb_file_Copy3.Text == "" || tb_file_Copy3.Text == null)
             {
                 MessageBox.Show("Filename field is empty", "Warning", MessageBoxButton.OK, MessageBoxImage.Error);
@@ -50,7 +53,7 @@ namespace UMJA
                 var compiler = new Compiler();
                 compiler.ReadCsv(folder);
             }
-
+            CsvPathLuke = folder;
         }
         private void Tb_file_TextChanged(object sender, TextChangedEventArgs e)
         {
@@ -152,7 +155,6 @@ namespace UMJA
             folderBrowser.ValidateNames = false;
             folderBrowser.CheckFileExists = false;
             folderBrowser.CheckPathExists = true;
-
             folderBrowser.FileName = "Folder Selection.";
             if (folderBrowser.ShowDialog() == true)
             {
@@ -160,6 +162,8 @@ namespace UMJA
                 tb_pfolder.Text = folderPath;
 
             }
+
+
 
 
         }
