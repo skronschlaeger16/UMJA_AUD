@@ -46,28 +46,29 @@ namespace UMJA
 
                             foreach (var item in splitGlobals)
                             {
+                                string globalsLine = item;
                                 string publicPrivate = "";
                                 string zustand = "";
                                 string variableName = "";
                                 string variableType = "";
                                 string value = "";
 
-                                if (item.Contains("-"))
+                                if (globalsLine.Contains("-"))
                                 {
                                     publicPrivate = "private";
-                                    item.Remove(0, 2);
+                                    globalsLine = globalsLine.Remove(0, 3);
                                 }
 
                                 else
                                 {
                                     publicPrivate = "public";
-                                    item.Remove(0, 2);
+                                    globalsLine = globalsLine.Remove(0, 3);
                                 }
 
-                                if (item.Contains("static"))
+                                if (globalsLine.Contains("static"))
                                 {
                                     zustand = "static";
-                                    item.Remove(0, 6);
+                                    globalsLine = globalsLine.Remove(0, 7);
                                 }
 
                                 var splitColumn = item.Split(':');
@@ -225,20 +226,20 @@ namespace UMJA
                                 {
                                     if(item.ElementAt(item.IndexOf("(") + 1).Equals(")"))
                                     {
-                                        item.Replace('(', ' ');
-                                        item.Remove(item.Length - 1);
+                                        methodLine = methodLine.Replace('(', ' ');
+                                        methodLine = methodLine.Remove(methodLine.Length - 1);
 
-                                        writer.WriteLine($"{publicPrivate} {item} () {{");
+                                        writer.WriteLine($"{publicPrivate} {methodLine} () {{");
                                         writer.WriteLine();
                                         writer.WriteLine($"}}");
                                     }
 
                                     else
                                     {
-                                        item.Replace('(', ' ');
-                                        item.Remove(item.Length - 1);
+                                        methodLine = methodLine.Replace('(', ' ');
+                                        methodLine = methodLine.Remove(methodLine.Length - 1);
 
-                                        var splitConstructor = item.Split(' ');
+                                        var splitConstructor = methodLine.Split(' ');
                                         methodName = splitConstructor[0];
                                         var splitParameters = splitConstructor[1].Split(',');
 
@@ -311,6 +312,7 @@ namespace UMJA
 
                             foreach (var item in splitGlobals)
                             {
+                                string globalsLine = item;
                                 string publicPrivate = "";
                                 string zustand = "";
                                 string variableName = "";
@@ -320,22 +322,22 @@ namespace UMJA
                                 if (item.Contains("-"))
                                 {
                                     publicPrivate = "private";
-                                    item.Remove(0, 2);
+                                    globalsLine = globalsLine.Remove(0, 2);
                                 }
 
                                 else
                                 {
                                     publicPrivate = "public";
-                                    item.Remove(0, 2);
+                                    globalsLine = globalsLine.Remove(0, 2);
                                 }
 
                                 if (item.Contains("static"))
                                 {
                                     zustand = "static";
-                                    item.Remove(0, 6);
+                                    globalsLine = globalsLine.Remove(0, 7);
                                 }
 
-                                var splitColumn = item.Split(':');
+                                var splitColumn = globalsLine.Split(':');
                                 variableName = splitColumn[0].Trim();
 
                                 if (variableName.Contains("="))
@@ -381,6 +383,7 @@ namespace UMJA
 
                             foreach (var item in splitMethods)
                             {
+                                string methodLine = item;
                                 string publicPrivate = "";
                                 string zustand = "";
                                 string methodType = "";
@@ -392,33 +395,33 @@ namespace UMJA
                                 if (item.Contains("-"))
                                 {
                                     publicPrivate = "private";
-                                    item.Remove(0, 1);
+                                    methodLine = methodLine.Remove(0, 1);
                                 }
 
                                 else
                                 {
                                     publicPrivate = "public";
-                                    item.Remove(0, 1);
+                                    methodLine = methodLine.Remove(0, 1);
                                 }
 
                                 if (item.Contains("static"))
                                 {
                                     zustand = "static";
-                                    item.Remove(0, 6);
+                                    methodLine = methodLine.Remove(0, 6);
                                 }
 
                                 if (!item.EndsWith(")"))
                                 {
-                                    int idx = item.LastIndexOf(':');
+                                    int idx = methodLine.LastIndexOf(':');
 
                                     if (idx != -1)
                                     {
-                                        methodnameAndParameters = item.Substring(0, idx).Trim();
-                                        methodType = item.Substring(idx + 1).Trim();
+                                        methodnameAndParameters = methodLine.Substring(0, idx).Trim();
+                                        methodType = methodLine.Substring(idx + 1).Trim();
                                     }
 
-                                    methodnameAndParameters.Replace('(', ' ');
-                                    methodnameAndParameters.Remove(methodnameAndParameters.Length - 1);
+                                    methodnameAndParameters = methodnameAndParameters.Replace('(', ' ');
+                                    methodnameAndParameters = methodnameAndParameters.Remove(methodnameAndParameters.Length - 1);
 
                                     var splitMethodFromParameters = methodnameAndParameters.Split(' ');
                                     methodName = splitMethodFromParameters[0];
