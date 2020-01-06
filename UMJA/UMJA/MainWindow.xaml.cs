@@ -34,7 +34,7 @@ namespace UMJA
 
         }
 
-        public static string CsvPathLuke { get; set; }
+        public string CsvPathLuke { get; set; }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -162,6 +162,8 @@ namespace UMJA
                 tb_pfolder.Text = folderPath;
 
             }
+
+
 
 
         }
