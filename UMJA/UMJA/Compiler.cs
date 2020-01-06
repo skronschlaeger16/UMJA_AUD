@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace UMJA
@@ -71,7 +72,7 @@ namespace UMJA
                                     globalsLine = globalsLine.Remove(0, 7);
                                 }
 
-                                var splitColumn = item.Split(':');
+                                var splitColumn = globalsLine.Split(':');
                                 variableName = splitColumn[0].Trim();
 
                                 if (variableName.Contains("="))
@@ -178,6 +179,7 @@ namespace UMJA
                                     if(idx != -1)
                                     {
                                         methodnameAndParameters = methodLine.Substring(0, idx).Trim();
+                                        methodnameAndParameters = Regex.Replace(methodnameAndParameters, @"\s+", "");
                                         methodType = methodLine.Substring(idx + 1).Trim();
                                     }
 
