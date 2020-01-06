@@ -97,10 +97,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="foldder.png" />
+    <Resource Include="folder.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="action-upload-alt-512.png" />
+    <Resource Include="upload.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
