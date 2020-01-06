@@ -1,0 +1,16 @@
+D:\Schule\4a\UMJA_AUD\UMJA\UMJA\bin\Debug\UMJA.exe.config
+D:\Schule\4a\UMJA_AUD\UMJA\UMJA\bin\Debug\UMJA.exe
+D:\Schule\4a\UMJA_AUD\UMJA\UMJA\bin\Debug\UMJA.pdb
+D:\Schule\4a\UMJA_AUD\UMJA\UMJA\obj\Debug\UMJA.csprojAssemblyReference.cache
+D:\Schule\4a\UMJA_AUD\UMJA\UMJA\obj\Debug\MainWindow.g.cs
+D:\Schule\4a\UMJA_AUD\UMJA\UMJA\obj\Debug\App.g.cs
+D:\Schule\4a\UMJA_AUD\UMJA\UMJA\obj\Debug\UMJA_MarkupCompile.cache
+D:\Schule\4a\UMJA_AUD\UMJA\UMJA\obj\Debug\UMJA_MarkupCompile.lref
+D:\Schule\4a\UMJA_AUD\UMJA\UMJA\obj\Debug\App.baml
+D:\Schule\4a\UMJA_AUD\UMJA\UMJA\obj\Debug\MainWindow.baml
+D:\Schule\4a\UMJA_AUD\UMJA\UMJA\obj\Debug\UMJA.g.resources
+D:\Schule\4a\UMJA_AUD\UMJA\UMJA\obj\Debug\UMJA.Properties.Resources.resources
+D:\Schule\4a\UMJA_AUD\UMJA\UMJA\obj\Debug\UMJA.csproj.GenerateResource.cache
+D:\Schule\4a\UMJA_AUD\UMJA\UMJA\obj\Debug\UMJA.csproj.CoreCompileInputs.cache
+D:\Schule\4a\UMJA_AUD\UMJA\UMJA\obj\Debug\UMJA.exe
+D:\Schule\4a\UMJA_AUD\UMJA\UMJA\obj\Debug\UMJA.pdb
